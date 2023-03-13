@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Calculos {
@@ -74,5 +75,20 @@ public class Calculos {
             longitud--;
         }while(longitud>0);
         return ordenado;
+    }
+
+    public int suma(){
+        int suma_numeros=0;
+        for (int i = 0; i < this.numeros.length; i++) {
+            suma_numeros+=this.numeros[i];
+        }
+        return suma_numeros;
+    }
+
+    @Override
+    public String toString() {
+        return "Calculos{" +
+                "numeros=" + Arrays.toString(numeros) +
+                '}';
     }
 }
