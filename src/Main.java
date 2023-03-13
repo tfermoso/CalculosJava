@@ -12,31 +12,28 @@ public class Main {
                 1. Introducir números
                 2. Mostrar suma
                 3. Mostrar media
+                4. Mostrar array de números
                 10. Salir
                 """;
         do {
             System.out.println(MENU);
             opcion=leer.nextLine();
-            switch (opcion){
-                case "1":
+            switch (opcion) {
+                case "1" -> {
                     System.out.println("Introduce los 10 números");
-                    int[] numeros=new int[10];
+                    int[] numeros = new int[10];
                     for (int i = 0; i < 10; i++) {
-                        System.out.println("Numero "+i);
-                        numeros[i]= leer.nextInt();
+                        System.out.println("Numero " + i);
+                        numeros[i] = leer.nextInt();
                         leer.nextLine();
                     }
                     calculos.setNumeros(numeros);
-                    break;
-                case "2":
-                    System.out.println("La media es "+calculos.media());
-                    break;
-                case "10":
-                    salir=true;
-                    break;
-                default:
-                    System.out.println("Opcion no válida");
-                    break;
+                }
+                case "2" -> System.out.println("La suma es: "+calculos.suma());
+                case "3" -> System.out.println("La media es " + calculos.media());
+                case "4" -> System.out.println(calculos);
+                case "10" -> salir = true;
+                default -> System.out.println("Opcion no válida");
             }
 
         }while(!salir);

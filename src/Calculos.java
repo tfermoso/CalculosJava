@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Calculos {
@@ -52,11 +53,11 @@ public class Calculos {
     }
     public List<Integer> unicos(){
         List<Integer> numerosUnicos=new ArrayList<Integer>();
-            for (int j = 0; j < this.numeros.length; j++) {
-                if (numerosUnicos.indexOf(numeros[j]) == -1) {
-                    numerosUnicos.add(numeros[j]);
-                }
+        for (int j = 0; j < this.numeros.length; j++) {
+            if (numerosUnicos.indexOf(numeros[j]) == -1) {
+                numerosUnicos.add(numeros[j]);
             }
+        }
         return numerosUnicos;
     }
     public int[] ordenarMayor(){
@@ -66,13 +67,28 @@ public class Calculos {
         do{
             for (int i = 0; i < longitud-1; i++) {
                 if(this.numeros[i]<this.numeros[i+1]){
-                   temp=this.numeros[i+1];
-                   numeros[i+1]=numeros[i];
-                   numeros[i]=temp;
+                    temp=this.numeros[i+1];
+                    numeros[i+1]=numeros[i];
+                    numeros[i]=temp;
                 }
             }
             longitud--;
         }while(longitud>0);
         return ordenado;
+    }
+
+    public int suma(){
+        int suma_numeros=0;
+        for (int i = 0; i < this.numeros.length; i++) {
+            suma_numeros+=this.numeros[i];
+        }
+        return suma_numeros;
+    }
+
+    @Override
+    public String toString() {
+        return "Calculos{" +
+                "numeros=" + Arrays.toString(numeros) +
+                '}';
     }
 }
